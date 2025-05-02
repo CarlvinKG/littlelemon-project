@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
     },
     {
       name: "Order Online",
-      path: "/orderOnline",
+      path: "/order-online",
       nvLink: false,
     },
     {
@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header navLinks={navLinks} />
-      <main id="home">{children}</main>
+        <main id="home">{children}</main>
       <Footer navLinks={navLinks} />
     </>
   );

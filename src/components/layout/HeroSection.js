@@ -1,9 +1,9 @@
 import React from "react";
-import "../../styles/HeroSection.css"
-import HeroImage from "./HeroImage"
-import HeroText from "./HeroText"
+import "../../styles/HeroSection.css";
+import HeroImage from "./HeroImage";
+import HeroText from "./HeroText";
 
-export default function HeroSection({image, Text}) {
+const HeroSection = ({image, Text}) => {
     return (
         <div className='hs-background'>
             <div className='hs-container'>
@@ -19,5 +19,7 @@ export default function HeroSection({image, Text}) {
                 </div>
             </div>
         </div>
-    )
+    );
 };
+
+export default HeroSection;
