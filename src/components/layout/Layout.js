@@ -1,5 +1,7 @@
+import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import ScrollToTop from './ScrollToTop';
 
 const Layout = ({ children }) => {
   const navLinks = [
@@ -15,7 +17,7 @@ const Layout = ({ children }) => {
     },
     {
       name: "Menu",
-      path: "/#menu",
+      path: "/menu",
       nvLink: true,
     },
     {
@@ -39,6 +41,7 @@ const Layout = ({ children }) => {
     <>
       <Header navLinks={navLinks} />
         <main id="home">{children}</main>
+        <ScrollToTop />
       <Footer navLinks={navLinks} />
     </>
   );

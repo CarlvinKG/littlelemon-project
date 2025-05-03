@@ -1,10 +1,6 @@
-import React from 'react'
-import "../../styles/TestimonialsCard.css"
-import Person1 from "../../assets/person1.webp"
-import Person2 from "../../assets/person2.png"
-import Person3 from "../../assets/person3.jpg"
-import Person4 from "../../assets/person4.jpg"
-import Stars from './Stars'
+import React from 'react';
+import "../../styles/TestimonialsCard.css";
+import Stars from './Stars';
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const TestimonialsCard = ({ testimony }) => {

@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
 import logo from "../../assets/logo.jpg";
 import "../../styles/Header.css";
 import { motion } from "framer-motion";
+import { HashLink } from "react-router-hash-link";
 
 const Header = ({ navLinks }) => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -11,9 +12,9 @@ const Header = ({ navLinks }) => {
   return (
     <header>
       <nav className="nav-bar">
-        <NavLink className="nav-logo" to="/">
+        <HashLink className="nav-logo" to="/" smooth>
           <img src={logo} alt="Little Lemon logo" />
-        </NavLink>
+        </HashLink>
         <button className="nav-hamburger" type="button" onClick={() => setIsNavExpanded(!isNavExpanded)}>
           {isNavExpanded ? (
             <FaXmark size={30} />
@@ -30,7 +31,7 @@ const Header = ({ navLinks }) => {
               key={navLink.name}
               onClick={() => setIsNavExpanded(false)}>
               {navLink.nvLink ? (
-                <NavLink to={navLink.path}>{navLink.name}</NavLink>
+                <HashLink to={navLink.path} smooth>{navLink.name}</HashLink>
               ) : (
                 <Link to={navLink.path}>{navLink.name}</Link>
               )}

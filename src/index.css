@@ -48,6 +48,23 @@ li a {
   color: #495E57;
 }
 
+.toTop-btn {
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+}
+
+.toTop-style {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: #333333 solid 2px;
+  background-color: #FFFFFF;
+  color: #333333;
+  cursor: pointer;
+  z-index: 100;
+}
+
 @media screen and (max-width: 1024px) {
   .container {
     width: 90%;

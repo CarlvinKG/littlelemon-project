@@ -3,7 +3,7 @@ import "../../styles/HeroSection.css";
 import HeroImage from "./HeroImage";
 import HeroText from "./HeroText";
 
-const HeroSection = ({image, Text}) => {
+const HeroSection = ({hero, Text}) => {
     return (
         <div className='hs-background'>
             <div className='hs-container'>
@@ -14,7 +14,7 @@ const HeroSection = ({image, Text}) => {
                 </div>
                 <div className='hs-right'>
                     <div className='img-box'>
-                        <HeroImage image={image} />
+                        <HeroImage hero={hero} />
                     </div>
                 </div>
             </div>

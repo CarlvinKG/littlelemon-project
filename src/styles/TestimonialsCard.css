@@ -6,6 +6,7 @@
     height: 100%;
     padding: 16px;
     background-color: #FFFFFF;
+    border-radius: 50px 0;
 }
 
 .t-card-container img {
@@ -14,7 +15,7 @@
     margin: 0 auto 10px;
     border-radius: 100%;
   }
-  
+
   .t-card-container h4 {
     text-align: center;
     padding-bottom: 10px;
