@@ -1,3 +1,4 @@
+import React from 'react';
 import HeroSection from "../layout/HeroSection";
 import Highlights from "../layout/Highlights";
 import Testimonials from "../layout/Testimonials";

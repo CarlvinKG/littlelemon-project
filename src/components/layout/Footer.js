@@ -11,7 +11,7 @@ const socials = [
     {icon: <BsTwitterX size={25} />},
     {icon: <BsPinterest size={25} />},
     {icon: <BsYoutube size={25} />}
-]
+];
 
 const Footer = ({ navLinks }) => {
     return (
@@ -35,8 +35,8 @@ const Footer = ({ navLinks }) => {
                     <h4>Contact Us</h4>
                     <p>423 Lemon Street<br />
                     Chicago, IL 60001<br />
-                    <br /><MdPhone /> (888) 888-7777<br />
-                    <MdOutlineMarkEmailRead /> Little@lemon.com</p>
+                    <br /><MdPhone size={15} /> (888) 888-7777<br />
+                    <MdOutlineMarkEmailRead size={15} /> Little@lemon.com</p>
                 </div>
                 <div className="footer-socials">
                     <h4>Socials</h4>

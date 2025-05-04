@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { FaArrowCircleUp } from "react-icons/fa";
+import { FaArrowCircleUp } from "react-icons/fa";;
 
 const ScrollToTop = () => {
     const [showScrollTopButton, setScrollTopButton] = useState(false);
@@ -30,4 +30,4 @@ const ScrollToTop = () => {
   );
 };
 
-export default ScrollToTop
+export default ScrollToTop;

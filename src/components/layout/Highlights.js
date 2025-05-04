@@ -1,8 +1,8 @@
 import React from 'react';
 import "../../styles/Highlights.css";
-import Dish1 from "../../assets/greek-salad.jpg"
-import Dish2 from "../../assets/lemon-dessert.jpg"
-import Dish3 from "../../assets/bruschetta.jpg"
+import Dish1 from "../../assets/greek-salad.jpg";
+import Dish2 from "../../assets/lemon-dessert.jpg";
+import Dish3 from "../../assets/bruschetta.jpg";
 import HighlightsCard from './HighlightsCard';
 
 const dishes = [
@@ -24,7 +24,7 @@ const dishes = [
         price: "$5.99",
         description: "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil."
     }
-]
+];
 
 const Highlights = () => {
   return (
@@ -39,7 +39,7 @@ const Highlights = () => {
         <HighlightsCard key={index} dish={dish} />
       ))}
     </section>
-  )
-}
+  );
+};
 
-export default Highlights
+export default Highlights;

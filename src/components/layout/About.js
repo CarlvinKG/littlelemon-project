@@ -13,12 +13,12 @@ const About = () => {
             <div className='about-right'>
                 <h1>Little Lemon</h1>
                 <h2>Chicago</h2>
-                <p>Ut ornare lectus sit amet est. Ligula ullamcorper malesuada proin libero nunc. 
-                    Sed cras ornare arcu dui. Fames ac turpis egestas maecenas pharetra convallis 
+                <p>Ut ornare lectus sit amet est. Ligula ullamcorper malesuada proin libero nunc.
+                    Sed cras ornare arcu dui. Fames ac turpis egestas maecenas pharetra convallis
                     posuere morbi leo.</p>
             </div>
         </div>
-    )
+    );
 };
 
 export default About;

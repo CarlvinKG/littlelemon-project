@@ -1,4 +1,4 @@
-import "../../styles/HighlightsCard.css"
+import "../../styles/HighlightsCard.css";
 import { NavLink } from 'react-router-dom';
 import { MdDeliveryDining } from "react-icons/md";
 

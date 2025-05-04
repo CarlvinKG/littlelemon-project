@@ -14,4 +14,4 @@ const TestimonialsCard = ({ testimony }) => {
     );
 };
 
-export default TestimonialsCard
+export default TestimonialsCard;

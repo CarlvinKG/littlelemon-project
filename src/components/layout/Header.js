@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
 import logo from "../../assets/logo.jpg";
@@ -8,6 +8,14 @@ import { HashLink } from "react-router-hash-link";
 
 const Header = ({ navLinks }) => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () =>{
+      if (window.scrollY > 200) {
+        setIsNavExpanded(false);
+      }
+    })
+  }, []);
 
   return (
     <header>
@@ -23,7 +31,7 @@ const Header = ({ navLinks }) => {
           )}
         </button>
         <motion.ul className={isNavExpanded ? "nav-links expanded" : "nav-links"}
-        initial={{y: 25, opacity: 0}}
+        initial={{y: 0, opacity: 0}}
         animate={{y: 0, opacity: 1}}
         transition={{duration: 1, ease: 'easeInOut'}}>
           {navLinks.map((navLink) => (

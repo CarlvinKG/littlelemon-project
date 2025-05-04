@@ -59,34 +59,33 @@ header {
     }
 
     .nav-links.expanded {
-      justify-content: flex-start;
-      align-items: flex-start;
-      left: 0px;
-      box-shadow: 2px 0px 5px #333333;
+        justify-self: flex-start;
+        align-items: flex-start;
+        left: 0px;
+        box-shadow: 2px 0px 5px #333333;
     }
 
     .nav-links.expanded li {
-      width: 100%;
-      border-bottom: 1px solid #333333;
+        width: 100%;
+        border-bottom: #333333 groove 1px;
     }
 
     .nav-links.expanded li a {
-      padding: 20px;
-      display: block;
+        padding: 20px;
+        display: block;
     }
 
     .nav-links.expanded li:hover {
-      background-color: #EDEFEE;
+        background-color: #EDEFEE;
     }
 
     .nav-links {
-        position: absolute;
+        position: fixed;
         flex-direction: column;
         background-color: #FFFFFF;
+        top: 80px;
         width: 75%;
         max-width: 250px;
-        height: 100%;
-        top: 0px;
         left: -250px;
         z-index: 25;
     }
