@@ -1,0 +1,57 @@
+form {
+    margin: 0 auto;
+    width: 50%;
+    background-color: #EDEFEE;
+    border-radius: 20px;
+}
+
+fieldset {
+    border: none;
+    padding: 20px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.field label {
+    font-size: 18px;
+    margin: 0 0 5px 0px;
+    font-weight: 500;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #33333350;
+    border-radius: 5px;
+    width: 100%;
+}
+
+select {
+    padding: 10px;
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 15px;
+    background-color:  #FFFFFF;
+}
+
+form .btn-container {
+    width: 100%;
+    display: grid;
+}
+
+@media screen and (max-width: 1024px) {
+    form {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    form {
+        width: 100%;
+    }
+}

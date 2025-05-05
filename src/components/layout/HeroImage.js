@@ -7,7 +7,7 @@ const HeroImage = ({hero}) => {
     const images = [HeroImage1, HeroImage2, HeroImage3];
 
     return (
-        <img src= {images[hero]} alt='Restauran Image' />
+        <img src= {images[hero]} alt='Restauran' />
     );
 };
 
