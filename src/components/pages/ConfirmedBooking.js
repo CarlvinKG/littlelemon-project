@@ -1,9 +1,9 @@
 import React from 'react';
 import HeroSection from "../layout/HeroSection";
 import { BsCheckCircleFill } from "react-icons/bs";
-import '../../styles/Confirmation.css'
+import '../../styles/Confirmation.css';
 
-const Confirmation = () => {
+const ConfirmedBooking = () => {
   return (
     <>
         <HeroSection hero='2' Text='2' />
@@ -18,4 +18,4 @@ const Confirmation = () => {
   );
 };
 
-export default Confirmation;
+export default ConfirmedBooking;

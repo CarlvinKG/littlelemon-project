@@ -1,7 +1,12 @@
 .confirmed {
     text-align: center;
+    padding: 40px 0 40px 0;
   }
 
   .confirmed p {
     padding-top: 15px;
+  }
+
+  .confirmed svg {
+    margin: 15px;
   }

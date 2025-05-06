@@ -1,8 +1,9 @@
 form {
     margin: 0 auto;
     width: 50%;
-    background-color: #EDEFEE;
+    background-color: #FFFFFF;
     border-radius: 20px;
+    border: #33333350 solid 1px;
 }
 
 fieldset {
@@ -33,7 +34,8 @@ input {
 select {
     padding: 10px;
     outline: none;
-    border: none;
+    border: 1px solid #33333350;
+    border-radius: 5px;
     width: 100%;
     font-size: 15px;
     background-color:  #FFFFFF;
@@ -42,6 +44,10 @@ select {
 form .btn-container {
     width: 100%;
     display: grid;
+}
+
+form .btn-container .btn:disabled {
+    background: #EDEFEE;
 }
 
 @media screen and (max-width: 1024px) {

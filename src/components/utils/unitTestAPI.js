@@ -6,11 +6,11 @@ const seededRandom = (seed) => {
     return () => (s = (s * a) % m) / m;
 };
 
-const generateTimeOptions = (date) => {
+const fetchAPI = (date) => {
     let result = [];
     let random = seededRandom(date.getDate());
 
-    for (let i = 17; i <= 23; i++) {
+    for (let i = 9; i <= 19; i++) {
         if (random() < 0.5) result.push(i + ":00");
         if (random() < 0.5) result.push(i + ":30");
     }
@@ -22,4 +22,4 @@ const generateTimeOptions = (date) => {
     return true;
 };
 
-export { generateTimeOptions, submitAPI };
+export { fetchAPI, submitAPI };

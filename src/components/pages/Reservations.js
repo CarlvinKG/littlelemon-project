@@ -1,37 +1,37 @@
 import React, { useReducer } from 'react';
 import { useNavigate } from "react-router-dom";
-import { generateTimeOptions, submitAPI } from '../utils/unrealAPI';
+import { fetchAPI, submitAPI } from '../utils/unitTestAPI';
 import HeroSection from "../layout/HeroSection";
 import HoursOperations from '../layout/HoursOperation';
-import ReservationForm from '../layout/ReservationForm';
+import BookingForm from '../layout/BookingForm';
 
 const occasions = ['No Occasion', 'First Date', 'Birthday', 'Engagement', 'Anniversary'];
 const seatingAreas = ['Indoor', 'Outdoor', 'Bar'];
 
 const updateTimes = (availableTimes, date) => {
-  const response = generateTimeOptions(new Date(date));
+  const response = fetchAPI(new Date(date));
   return (response.length !== 0) ? [...response] : availableTimes;
 }
 
 const initializeTimes = (initialAvailableTimes) => [
   ...initialAvailableTimes,
-  ...generateTimeOptions(new Date()),
+  ...fetchAPI(new Date()),
 ];
 
 const Reservations = () => {
-  const [availableTimes, dispatchOnDateChange] = useReducer(updateTimes, [], initializeTimes);
+  const [availableTimes] = useReducer(updateTimes, [], initializeTimes);
   const navigate = useNavigate();
 
-  const submitData = (formData) => {
+  const submitForm = (formData) => {
     const response = submitAPI(formData);
-    if (response) navigate("/confirmation");
+    if (response) navigate("/confirmed-booking");
   };
 
   return (
     <>
       <HeroSection hero='1' Text='1'/>
       <HoursOperations />
-      <ReservationForm availableTimes={availableTimes} occasions={occasions} seatingAreas={seatingAreas} submitData={submitData} />
+      <BookingForm availableTimes={availableTimes} occasions={occasions} seatingAreas={seatingAreas} submitForm={submitForm} />
     </>
   );
 };

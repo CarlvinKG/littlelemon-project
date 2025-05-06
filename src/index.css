@@ -48,6 +48,23 @@ li a {
   color: #495E57;
 }
 
+.btn {
+    padding: 15px 30px;
+    font-size: 16pt;
+    font-weight: 600;
+    background-color: #F4CE14;
+    color: #333333;
+    border-radius: 20px;
+    border: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #333333;
+    color: #F4CE14;
+    transition: 0.3s;
+}
+
 .toTop-btn {
   position: fixed;
   bottom: 15px;

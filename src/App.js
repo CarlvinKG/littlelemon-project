@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./components/pages/Home";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './components/pages/Home';
 import Reservations from './components/pages/Reservations';
-import Confirmation from './components/pages/Confirmation';
-import Layout from "./components/layout/Layout";
+import ConfirmedBooking from './components/pages/ConfirmedBooking';
+import Layout from './components/layout/Layout';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/reservations" element={<Reservations />} />
-          <Route path="/confirmation" element={<Confirmation />} />
+          <Route path="/confirmed-booking" element={<ConfirmedBooking />} />
       </Routes>
     </Layout>
     </BrowserRouter>

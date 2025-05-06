@@ -1,41 +1,67 @@
 import React, { useState } from 'react';
-import FormField from '../layout/FormField'
-import '../../styles/ReservationForm.css'
+import FormField from '../layout/FormField';
+import '../../styles/BookingForm.css';
 
-const ReservationForm = ({ availableTimes, occasions, seatingAreas, submitData }) => {
+const BookingForm = ({ dispatchDateChange, availableTimes, occasions, seatingAreas, submitForm }) => {
 
+    const guestName = '';
     const minNumberGuests = 1;
     const maxNumberGuests = 10;
     const minDate = new Date().toJSON().slice(0, 10);
     const defaultTime = availableTimes[0];
     const defaultSeating = seatingAreas[0];
 
+    const invalidGuestName = 'Please provide a valid name!';
     const invalidGuestErrorMessage = 'Please enter a number between ' + minNumberGuests + 'and ' + maxNumberGuests + '!';
     const invalidOccasionErrorMessage = 'Please choose a valid occasion!';
     const invalidDateErrorMessage = 'Please choose a valid date!';
     const invalidTimeErrorMessage = 'Please choose a valid time!';
     const invalidSeatingErrorMessage = 'Please choose a valid seating area!';
 
+    const [fullGuestName, setFullGuestName] = useState(guestName);
     const [numberOfGuests, setNumberOfGuests] = useState(minNumberGuests);
     const [occasion, setOccasion] = useState(occasions[0]);
     const [date, setDate] = useState(minDate);
     const [time, setTime] = useState(defaultTime);
     const [seating, setSeating] = useState(defaultSeating);
 
+    const isGuestNameValid = () => fullGuestName !== '';
     const isGuestsValid = () => numberOfGuests !== '';
     const isOccasionValid = () => occasion !== '';
     const isDateValid = () => date !== '';
     const isTimeValid = () => time !== '';
     const isSeatingValid = () => seating !== '';
 
+    const allGreen = () =>
+        isGuestNameValid() &&
+        isGuestsValid()  &&
+        isOccasionValid()  &&
+        isDateValid()  &&
+        isTimeValid()  &&
+        isSeatingValid();
+
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        submitData({ numberOfGuests, occasion, date, time, seating })
+        submitForm({ fullGuestName, numberOfGuests, occasion, date, time, seating })
     }
+
   return (
     <div className='container'>
     <form onSubmit={ handleFormSubmit }>
     <fieldset>
+        <FormField
+            label='Full name'
+            htmlFor='name'
+            hasError={ !isGuestNameValid() }
+            errorMessage={ invalidGuestName }
+        >
+            <input
+                type='text'
+                name='name'
+                placeholder='John Doe'
+                onChange={ (e) => setFullGuestName(e.target.value) }
+                required={ true } />
+        </FormField>
         <FormField
             label='Select number of guests'
             htmlFor='guests'
@@ -77,6 +103,7 @@ const ReservationForm = ({ availableTimes, occasions, seatingAreas, submitData }
             <input
                 type='date'
                 name='date'
+                value={ date }
                 min={ minDate }
                 required={ true }
                 onChange={ (e) => setDate(e.target.value) }
@@ -116,7 +143,7 @@ const ReservationForm = ({ availableTimes, occasions, seatingAreas, submitData }
             </select>
         </FormField>
         <div className='btn-container'>
-            <button className="btn" type="submit">
+            <button className="btn" type="submit" disabled={!allGreen()}>
                 Reserve now!
             </button>
         </div>
@@ -126,4 +153,4 @@ const ReservationForm = ({ availableTimes, occasions, seatingAreas, submitData }
   );
 };
 
-export default ReservationForm;
+export default BookingForm;
