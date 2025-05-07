@@ -11,12 +11,20 @@ const BookingForm = ({ dispatchDateChange, availableTimes, occasions, seatingAre
     const defaultTime = availableTimes[0];
     const defaultSeating = seatingAreas[0];
 
-    const invalidGuestName = 'Please provide a valid name!';
+    const [invalidGuestName, setInvalidGuestName] = useState();
     const invalidGuestErrorMessage = 'Please enter a number between ' + minNumberGuests + 'and ' + maxNumberGuests + '!';
     const invalidOccasionErrorMessage = 'Please choose a valid occasion!';
     const invalidDateErrorMessage = 'Please choose a valid date!';
     const invalidTimeErrorMessage = 'Please choose a valid time!';
     const invalidSeatingErrorMessage = 'Please choose a valid seating area!';
+
+    const invalidNameMessage = () => {
+        if (fullGuestName.length < 3 || fullGuestName !== '') {
+            setInvalidGuestName('Name must be at least 3 characters long!');
+        } else {
+            setInvalidGuestName('')
+        }
+    }
 
     const [fullGuestName, setFullGuestName] = useState(guestName);
     const [numberOfGuests, setNumberOfGuests] = useState(minNumberGuests);
@@ -25,7 +33,7 @@ const BookingForm = ({ dispatchDateChange, availableTimes, occasions, seatingAre
     const [time, setTime] = useState(defaultTime);
     const [seating, setSeating] = useState(defaultSeating);
 
-    const isGuestNameValid = () => fullGuestName !== '';
+    const isGuestNameValid = () => fullGuestName !== '' && fullGuestName.length >= 3;
     const isGuestsValid = () => numberOfGuests !== '';
     const isOccasionValid = () => occasion !== '';
     const isDateValid = () => date !== '';
@@ -46,7 +54,7 @@ const BookingForm = ({ dispatchDateChange, availableTimes, occasions, seatingAre
     }
 
   return (
-    <div className='container'>
+    <section className='container'>
     <form onSubmit={ handleFormSubmit }>
     <fieldset>
         <FormField
@@ -58,7 +66,8 @@ const BookingForm = ({ dispatchDateChange, availableTimes, occasions, seatingAre
             <input
                 type='text'
                 name='name'
-                placeholder='John Doe'
+                placeholder='Jane Doe'
+                onBlur={invalidNameMessage}
                 onChange={ (e) => setFullGuestName(e.target.value) }
                 required={ true } />
         </FormField>
@@ -143,13 +152,13 @@ const BookingForm = ({ dispatchDateChange, availableTimes, occasions, seatingAre
             </select>
         </FormField>
         <div className='btn-container'>
-            <button className="btn" type="submit" disabled={!allGreen()}>
+            <button className="btn" type="submit" disabled={!allGreen()} aria-label="On Click">
                 Reserve now!
             </button>
         </div>
         </fieldset>
     </form>
-    </div>
+    </section>
   );
 };
 

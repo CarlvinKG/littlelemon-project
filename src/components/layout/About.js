@@ -4,7 +4,7 @@ import Image1 from "../../assets/about.png";
 
 const About = () => {
     return (
-        <div className='about-container' id='about'>
+        <sectionv className='about-container' id='about'>
             <div className='about-left'>
                 <div className='image'>
                     <img src={ Image1 } alt='Chef' />
@@ -17,7 +17,7 @@ const About = () => {
                     Sed cras ornare arcu dui. Fames ac turpis egestas maecenas pharetra convallis
                     posuere morbi leo.</p>
             </div>
-        </div>
+        </sectionv>
     );
 };
 

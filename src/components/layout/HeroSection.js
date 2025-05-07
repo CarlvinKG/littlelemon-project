@@ -5,7 +5,7 @@ import HeroText from "./HeroText";
 
 const HeroSection = ({hero, Text}) => {
     return (
-        <div className='hs-background'>
+        <section className='hs-background'>
             <div className='hs-container'>
                 <div className='hs-left'>
                     <h1>Little Lemon</h1>
@@ -18,7 +18,7 @@ const HeroSection = ({hero, Text}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
