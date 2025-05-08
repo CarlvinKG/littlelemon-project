@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styles/Footer.css";
 import Logo from "../../assets/footer-logo.png";
-import { BsFacebook, BsInstagram, BsTwitterX, BsPinterest, BsYoutube } from "react-icons/bs";
+import { BsFacebook, BsInstagram, BsTwitterX, BsPinterest, BsTiktok } from "react-icons/bs";
 import { MdOutlineMarkEmailRead, MdPhone } from "react-icons/md";
 import { HashLink } from "react-router-hash-link";
 
@@ -10,7 +10,7 @@ const socials = [
     {icon: <BsInstagram size={25} />},
     {icon: <BsTwitterX size={25} />},
     {icon: <BsPinterest size={25} />},
-    {icon: <BsYoutube size={25} />}
+    {icon: <BsTiktok size={25} />}
 ];
 
 const Footer = ({ navLinks }) => {
