@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
     },
     {
       name: "Menu",
-      path: "/menu",
+      path: "#",
       nvLink: true,
     },
     {
@@ -27,12 +27,12 @@ const Layout = ({ children }) => {
     },
     {
       name: "Order Online",
-      path: "/order-online",
+      path: "#",
       nvLink: false,
     },
     {
       name: "Login",
-      path: "/login",
+      path: "#",
       nvLink: false,
     },
   ];
